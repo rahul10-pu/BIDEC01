@@ -1,0 +1,20 @@
+{
+  "name": "BIDEC",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahul10-pu/BIDEC01.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahul10-pu/BIDEC01/issues"
+  },
+  "homepage": "https://github.com/rahul10-pu/BIDEC01#readme"
+}
