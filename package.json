@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/rahul10-pu/BIDEC01/issues"
   },
-  "homepage": "https://github.com/rahul10-pu/BIDEC01#readme"
+  "homepage": "https://github.com/rahul10-pu/BIDEC01#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.13.0"
+  }
 }
