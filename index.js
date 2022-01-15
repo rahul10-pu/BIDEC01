@@ -1,12 +1,15 @@
 
 var db = require("./model/postgres.sequelize.js")
 var userRouter=require("./router/user.js")
-var express=require("express")()
-express.get("/",(req,res)=>{
+// var bodyParser=require("body-parser")
+var express=require("express")
+var app=express()
+app.use(express.json())
+app.get("/",(req,res)=>{
     res.send("Home Page")
 })
-express.use("/user",userRouter)
-db.sequelizeConfig.sync({force:true})
+app.use("/user",userRouter)
+db.sequelizeConfig.sync({force:false})
 .then(
     ()=>{
         console.log("Database connection done")
@@ -18,4 +21,4 @@ db.sequelizeConfig.sync({force:true})
         console.log(err)
     }
 )
-express.listen(8080)
+app.listen(8080)
