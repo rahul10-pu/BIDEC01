@@ -19,4 +19,5 @@ const db={}
 db.Sequelize=Sequelize
 db.sequelizeConfig=sequelizeConfig
 db.users=require("./user.js")(sequelizeConfig,Sequelize)
+db.auth=require("./auth.js")(sequelizeConfig,Sequelize)
 module.exports=db
