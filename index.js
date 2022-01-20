@@ -2,6 +2,7 @@
 var db = require("./model/postgres.sequelize.js")
 var userRouter=require("./router/user.js")
 var authRouter=require("./router/auth.js")
+var Role=db.role
 // var bodyParser=require("body-parser")
 var express=require("express")
 var app=express()
@@ -12,9 +13,10 @@ app.get("/",(req,res)=>{
 app.use("/user",userRouter)
 app.use("/auth",authRouter)
 // app.use("tutorial",)
-db.sequelizeConfig.sync({force:false})
+db.sequelizeConfig.sync({force:true})
 .then(
     ()=>{
+        initializeDB()
         console.log("Database connection done")
     }
 )
@@ -24,4 +26,18 @@ db.sequelizeConfig.sync({force:false})
         console.log(err)
     }
 )
+function initializeDB(){
+    Role.create(
+        {
+            id:1,
+            name:"admin"
+        }
+    )
+    Role.create(
+        {
+            id:2,
+            name:"user"
+        }
+    )
+}
 app.listen(8080)
