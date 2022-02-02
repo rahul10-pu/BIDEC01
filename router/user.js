@@ -1,7 +1,7 @@
 var userRouter=require("express").Router() 
 var userController=require("../controller/user.js")
 var auth=require("../middleware/auth.js")
-userRouter.get("/",[auth.verifyToken],userController.getUser) //localhost:8080/user/
+userRouter.get("/",[auth.verifyToken, auth.isAdmin],userController.getUser) //localhost:8080/user/
 userRouter.post("/",userController.saveUser) //localhost:8080/user/
 // userRouter.post("/many",userController.saveUsers) //localhost:8080/user/many
 userRouter.patch("/",userController.updateAgeById) //localhost:8080/user/
