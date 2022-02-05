@@ -1,0 +1,1 @@
+exports.url="mongodb+srv://admin12:admin12@cluster0.apqfl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
